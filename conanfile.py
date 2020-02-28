@@ -55,7 +55,7 @@ class CjsonConan(ConanFile):
         if self._cmake:
             return self._cmake
         self._cmake = CMake(self)
-        self._cmake.definitions["ENABLE_CUSTOM_COMPILER_FLAGS"] = False
+        self._cmake.definitions["ENABLE_CUSTOM_COMPILER_FLAGS"] = True
         self._cmake.definitions["ENABLE_SANITIZERS"] = False
         self._cmake.definitions["ENABLE_SAFE_STACK"] = False
         self._cmake.definitions["ENABLE_PUBLIC_SYMBOLS"] = True
