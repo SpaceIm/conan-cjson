@@ -1,6 +1,7 @@
 #include <cjson/cJSON.h>
 
 #include <stdio.h>
+#include <stdlib.h>
 
 char *create_monitor_with_helpers() {
   const unsigned int resolution_numbers[3][2] = {
