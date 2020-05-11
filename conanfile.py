@@ -66,8 +66,7 @@ class CjsonConan(ConanFile):
         self._cmake.definitions["ENABLE_CJSON_TEST"] = False
         self._cmake.definitions["ENABLE_LOCALES"] = self.options.use_locales
         self._cmake.definitions["ENABLE_FUZZING"] = False
-        # Disable Custom Compiler Flags for MingW on Windows, because it uses -fstack-protector-strong
-        self._cmake.definitions["ENABLE_CUSTOM_COMPILER_FLAGS"] = not (self.settings.os == "Windows" and self.settings.compiler == "gcc")
+        self._cmake.definitions["ENABLE_CUSTOM_COMPILER_FLAGS"] = False
 
         self._cmake.configure(build_folder=self._build_subfolder)
         return self._cmake
